@@ -1,8 +1,15 @@
+﻿using Microsoft.EntityFrameworkCore;
+using buoi2_PhamDucThang_2122110019.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+
+// Đăng ký DbContext với SQL Server, sử dụng chuỗi kết nối từ configuration
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
