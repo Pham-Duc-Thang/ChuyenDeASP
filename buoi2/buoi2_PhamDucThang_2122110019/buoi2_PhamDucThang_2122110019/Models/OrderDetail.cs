@@ -11,5 +11,6 @@
         // Quan hệ với Order và Product
         public Order Order { get; set; }
         public Product Product { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }

@@ -10,5 +10,6 @@
 
         // Quan hệ 1-N với Order
         public ICollection<Order> Orders { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }

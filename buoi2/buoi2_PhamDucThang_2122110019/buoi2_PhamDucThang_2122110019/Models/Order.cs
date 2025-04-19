@@ -9,5 +9,6 @@
 
         // Quan hệ 1 - N với OrderDetail
         public ICollection<OrderDetail> OrderDetails { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }
